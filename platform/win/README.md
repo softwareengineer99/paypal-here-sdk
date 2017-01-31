@@ -30,7 +30,7 @@ var merchant = await RetailSDK.InitializeMerchant(new SdkCredentials("live", "<a
 
 You need to provide the executing environment (e.g. live, sandbox, stage2d0044, etc.) and the access token for creating the instance `SdkCredentials`. It is highly recommended to provide the information for automatically refreshing an expired access token in one of the following two ways
 
-#### [A] Refresh URL
+#### Refresh URL
 Provide an endpoint to which the SDK would do a `POST` to retrieve a new `access_token` once the active access token expires
 ```
 var merchant = await RetailSDK.InitializeMerchant(new SdkCredentials(Stage.Text, AccessToken.Text)
@@ -38,7 +38,7 @@ var merchant = await RetailSDK.InitializeMerchant(new SdkCredentials(Stage.Text,
 ```
 The endpoint should respond with a valid access token in the `access_token` property of the JSON response body
 
-#### [B] Refresh Token
+#### Refresh Token
 Provide `refresh_token`, `clientId` & `clientSecret`. SDK will use this information to request a new access token when an existing token expires
 
 ```
@@ -46,5 +46,5 @@ var merchant = await RetailSDK.InitializeMerchant(new SdkCredentials(Stage.Text,
 	.SetTokenRefreshCredentials(refreshToken: "<refresh-token>", clientId: "<client-id>", clientSecret: "<client-secret>"));
 ```
 
-When both options are provided, the SDK would chose `[B]` over `[A]`
+When both options are provided, the SDK would pick Refresh Token over Refresh URL
 
