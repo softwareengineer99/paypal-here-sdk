@@ -48,13 +48,13 @@ var merchant = await RetailSDK.InitializeMerchant(new SdkCredentials(Stage.Text,
 
 When both options are provided, the SDK would pick Refresh Token over Refresh URL
 
-### 3. Display list of Discovered Devices
+### 3. Paired Devices
 Your App should start listening for connected devices by subscribing to the `DeviceDiscovered` event. These events could be fired anytime after the SDK is initialized
 
 ```
 RetailSDK.DeviceDiscovered += (sender, device) =>
 {
-    // Keep track of discovered devices
+    // A compatible credit card reader was discovered
     Devices.Add(device);
 };
 ```
@@ -63,12 +63,19 @@ When the SDK successfully connects to a paired card reader a `Connected` event i
 ```
 RetailSDK.DeviceDiscovered += (sender, device) =>
 {
-    // Keep track of discovered devices
-    Devices.Add(device);
-    
     device.Connected += (pd) => 
     {
     	// Device is connected
+    }
+    
+    device.ConnectionError += (pd, error) => 
+    {
+    	// Device connection was not successful
+    }
+    
+    device.Disconnected += (pd, error) =>
+    {
+    	// Device was disconnected
     }
 };
 ```
