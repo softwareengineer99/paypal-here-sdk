@@ -20,4 +20,6 @@ First you need to complete the on-boarding process and get the access token to u
 See our [Merchant Onboarding Guide](docs/Merchant%20Onboarding%20Guide.pdf) for suggestions on how to help your merchants sign up for PayPal business accounts and link them in your back-office software.
 
 ## Platform specific samples
-After completing the on-boarding process and retrieving the `access_token`, continue to the platform specific documentation page for further setup information 
+After completing the on-boarding process and retrieving the `access_token`, continue to the platform specific documentation page for further setup information
+
+1. [Windows Desktop](https://github.com/paypal/paypal-here-sdk/tree/master/platform/win)
