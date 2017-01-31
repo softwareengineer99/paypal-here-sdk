@@ -92,7 +92,9 @@ invoice.ShippingAmount = 2; // OPTIONAL
 #### Activate Card Reader for payment
 After building the Invoice object, you can create a new transaction with it and activate the connected card readers to accept payment.
 ```
+// Provide the UI element which the SDK will use to display modal alerts while payment is in progress
 RetailSDK.WpfContentGridForUi = (Grid)Content;
+
 var transaction = RetailSDK.CreateTransaction(invoice);
 transaction.Begin(true);
 transaction.Completed += (context, error, txRecord) =>
