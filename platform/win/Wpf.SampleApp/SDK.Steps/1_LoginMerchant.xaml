@@ -23,35 +23,26 @@
             <Image Source="./Resources/paypal-784404_640.png" Width="125" Margin="2 2 10 2" HorizontalAlignment="Right" Grid.Column="1"/>
         </Grid>
         <StackPanel Grid.Row="1" Margin="15">
-            <TextBlock HorizontalAlignment="Left" FontSize="14" TextWrapping="Wrap">Initialize the merchant using the composite access token which is generated using the following snippet</TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontSize="10" TextWrapping="Wrap">Initialize the merchant using an access_token and environment information</TextBlock>
             <StackPanel Background="LightGray" Margin="10">
-                <TextBlock Margin="2 5 0 0" TextWrapping="Wrap" FontSize="10">object[] args = { response, expiresIn, refreshURL, refreshToken, appIdAndSecret };</TextBlock>
-                <TextBlock Margin="2 5 0 0" TextWrapping="Wrap" FontSize="10">var sdkToken = environment + ":" + Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(args)));</TextBlock>
+                <TextBlock Margin="2 5 0 0" TextWrapping="Wrap" FontSize="9">var merchant = await RetailSDK.InitializeMerchant(new SdkCredentials("live", "access_token"));</TextBlock>
             </StackPanel>
-            <BulletDecorator>
-                <BulletDecorator.Bullet>
-                    <Ellipse Height="5" Width="5" Fill="Black"/>
-                </BulletDecorator.Bullet>
-                <TextBox BorderBrush="White" FontSize="10" Margin="5 0 0 0" Text="Either provide refreshURL or refreshToken" />
-            </BulletDecorator>
-            <BulletDecorator>
-                <BulletDecorator.Bullet>
-                    <Ellipse Height="5" Width="5" Fill="Black"/>
-                </BulletDecorator.Bullet>
-                <TextBox BorderBrush="White" FontSize="10" Margin="5 0 0 0" Text="expires_in : Expiration in seconds" />
-            </BulletDecorator>
-            <BulletDecorator>
-                <BulletDecorator.Bullet>
-                    <Ellipse Height="5" Width="5" Fill="Black"/>
-                </BulletDecorator.Bullet>
-                <TextBox BorderBrush="White" FontSize="10" Margin="5 0 0 0" Text="appIdAndSecret : base64 encoded value of &lt;clientId&gt;:&lt;clientSecret&gt;" />
-            </BulletDecorator>
-            <BulletDecorator>
-                <BulletDecorator.Bullet>
-                    <Ellipse Height="5" Width="5" Fill="Black"/>
-                </BulletDecorator.Bullet>
-                <TextBox BorderBrush="White" FontSize="10" Margin="5 0 0 0" Text="environment : Executing environment e.g., live, stage2d0065, etc." />
-            </BulletDecorator>
+            <TextBlock HorizontalAlignment="Left" FontSize="10" TextWrapping="Wrap">You could optionally provide (recommended) credential to automatically renew an expired access token by setting one of the following to the SdkCredentials object</TextBlock>
+            <StackPanel Margin="10">
+                <BulletDecorator>
+                    <BulletDecorator.Bullet>
+                        <Ellipse Height="5" Width="5" Fill="Black"/>
+                    </BulletDecorator.Bullet>
+                    <TextBox BorderBrush="White" FontSize="10" Margin="5 0 0 0" Text="refreshToken, clientId and clientSecret" />
+                </BulletDecorator>
+                <BulletDecorator>
+                    <BulletDecorator.Bullet>
+                        <Ellipse Height="5" Width="5" Fill="Black"/>
+                    </BulletDecorator.Bullet>
+                    <TextBox BorderBrush="White" FontSize="10" Margin="5 0 0 0" Text="refreshUrl" />
+                </BulletDecorator>
+            </StackPanel>
+            
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
