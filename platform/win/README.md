@@ -80,4 +80,26 @@ RetailSDK.DeviceDiscovered += (sender, device) =>
 };
 ```
 
+### 4. Take payment
+#### Create Invoice
+Before starting a payment transaction, you first need to build an `Invoice` object by adding at least on cart item and other optional fields like tip, shipping, etc. The currency on the created invoice will be default to the merchant currency.
+```
+var invoice = new Invoice(null);
+invoice.AddItem("Amount", decimal.One, amount, "", "");
+invoice.GratuityAmount = decimal.One; // OPTIONAL
+invoice.ShippingAmount = 2; // OPTIONAL
+```
+#### Activate Card Reader for payment
+After building the Invoice object, you can create a new transaction with it and activate the connected card readers to accept payment.
+```
+RetailSDK.WpfContentGridForUi = (Grid)Content;
+var transaction = RetailSDK.CreateTransaction(invoice);
+transaction.Begin(true);
+transaction.Completed += (context, error, txRecord) =>
+{
+    // error - indicates payment failure 
+    // txRecord  - will contain the transaction information
+};
+```
+
 
