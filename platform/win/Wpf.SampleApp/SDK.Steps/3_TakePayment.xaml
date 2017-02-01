@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Wpf.SampleApp.SDK.Steps"
       mc:Ignorable="d" 
       FontFamily="Consolas"
-      d:DesignHeight="350" d:DesignWidth="525"
+      d:DesignHeight="500" d:DesignWidth="600"
       Background="White"
       Title="_3_TakePayment">
     <Grid>

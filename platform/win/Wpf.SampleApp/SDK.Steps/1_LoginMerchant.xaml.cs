@@ -25,7 +25,7 @@ namespace Wpf.SampleApp.SDK.Steps
         public _1_LoginMerchant()
         {
             InitializeComponent();
-            AccessToken.Text = "A103.C9OBNgNoZcHSGExuB9te3hJ2NG9a0OIn1h_sC90-N6zfnpumghW7VEiwLW1LkIzZ.bABy8qs7wPlAdrRCvm8sunmpSCu";
+            AccessToken.Text = "A103._Hpo5hP9fNZmB_FYbSB7fQfh2S_ogx7qIR9EYFvY3OK68NKVcNpJLSTxVKidXx6F.8Wzaf-PJKIcSbjBzk8ZtYqyWB7G";
             Stage.Text = "stage2d0044";
         }
 
