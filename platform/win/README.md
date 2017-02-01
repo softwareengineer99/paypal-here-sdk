@@ -22,13 +22,13 @@ RetailSDK.Initialize();
 ```
 The SDK will start discovering paired credit card readers and will try to connect to them after SDK is initialized
 ### 2. Merchant Initialization
-Once you have retrieved a token for your merchant (typically from a backend server), call InitializeMerchant and wait for the task to complete before doing more SDK operations.
+Once you have retrieved a token for your merchant (typically from a backend server), call `InitializeMerchant` and await task completion before doing further SDK operations.
 
 ```
 var merchant = await RetailSDK.InitializeMerchant(new SdkCredentials("live", "<access-token>"));
 ```
 
-The executing environment (e.g. live, sandbox, stage2d0044, etc.) and the access token are required for initializing the merchant. Although token refresh credentials are optional, it is highly recommended to provide that information. The SDK can automatically refresh an expired access token in one of the following two ways
+The executing environment (e.g. live, sandbox, stage2d0044, etc.) and the access token are required for initializing the merchant. Although token refresh credentials are optional, it is highly recommended to provide it so that the SDK can automatically refresh an expired access token by one of the following ways
 
 #### Refresh URL
 Provide an endpoint to which the SDK can do a `POST` request to retrieve a new `access_token` once an active access token expires
@@ -82,7 +82,7 @@ RetailSDK.DeviceDiscovered += (sender, device) =>
 
 ### 4. Take payment
 #### Create Invoice
-Before starting a payment transaction, you first need to build an `Invoice` object by adding at least on cart item and other optional fields like tip, shipping, etc. The currency on the created invoice will be default to the merchant currency.
+Before starting a transaction, you first need to build an `Invoice` object by adding at least one cart item and other optional fields like tip, shipping, etc. The currency will default to the merchant's default currency.
 ```
 var invoice = new Invoice(null);
 invoice.AddItem("Amount", decimal.One, amount, "", "");
@@ -90,7 +90,7 @@ invoice.GratuityAmount = decimal.One; // OPTIONAL
 invoice.ShippingAmount = 2; // OPTIONAL
 ```
 #### Activate Card Reader for payment
-After building the Invoice object, you can create a new transaction with it and activate the connected card readers to accept payment.
+After building the Invoice object, you can create a new transaction with it and activate the connected card readers to start taking payments.
 ```
 // Provide the UI element which the SDK will use to display modal alerts while payment is in progress
 RetailSDK.WpfContentGridForUi = (Grid)Content;
