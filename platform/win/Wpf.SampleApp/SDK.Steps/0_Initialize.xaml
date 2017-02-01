@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       FontFamily="Consolas"
-      d:DesignHeight="350" d:DesignWidth="525"
+      d:DesignHeight="500" d:DesignWidth="600"
       Title="_0_Initialize" Background="White">
     <Grid>
         <Grid.RowDefinitions>
