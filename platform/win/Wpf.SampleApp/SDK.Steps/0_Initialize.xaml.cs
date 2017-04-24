@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PayPalRetailSDK;
 using Wpf.SampleApp.SDK.Steps.Utils;
+using Page = System.Windows.Controls.Page;
 
 namespace Wpf.SampleApp.SDK.Steps
 {
