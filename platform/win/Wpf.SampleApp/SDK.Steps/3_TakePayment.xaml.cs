@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PayPalRetailSDK;
+using Page = System.Windows.Controls.Page;
 
 namespace Wpf.SampleApp.SDK.Steps
 {
@@ -41,7 +42,7 @@ namespace Wpf.SampleApp.SDK.Steps
 
             RetailSDK.WpfContentGridForUi = (Grid)Content;
             var transaction = RetailSDK.CreateTransaction(invoice);
-            transaction.Begin(true);
+            transaction.Begin();
         }
     }
 }

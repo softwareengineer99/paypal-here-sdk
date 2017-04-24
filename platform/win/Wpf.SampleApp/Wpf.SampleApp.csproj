@@ -48,7 +48,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Manticore.Desktop, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PayPalRetailSDK.0.0.0.75\lib\net45\Manticore.Desktop.dll</HintPath>
+      <HintPath>..\packages\PayPalRetailSDK.0.0.0.76\lib\net45\Manticore.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
@@ -56,7 +56,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PayPalRetailSDK.Desktop, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PayPalRetailSDK.0.0.0.75\lib\net45\PayPalRetailSDK.Desktop.dll</HintPath>
+      <HintPath>..\packages\PayPalRetailSDK.0.0.0.76\lib\net45\PayPalRetailSDK.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
